@@ -24,7 +24,6 @@ public class SecondActivity extends AppCompatActivity {
         interruptCount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new InterruptSignal());
             }
         });
     }
