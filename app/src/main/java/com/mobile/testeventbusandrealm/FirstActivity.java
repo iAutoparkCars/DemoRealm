@@ -16,7 +16,7 @@ import io.realm.Realm;
 
 public class FirstActivity extends AppCompatActivity {
 
-    //start, cancel an Async task using Realm
+    //start, cancel, and Async task using Realm
     Button startRealmAsync;
     Button cancelRealmAsync;
     TestRealmAsync realmAsync;
@@ -26,7 +26,7 @@ public class FirstActivity extends AppCompatActivity {
     Button interruptRealmThread;
     Thread realmThread;
 
-    //call delete Realm file
+    //Button to delete this Realm
     Button deleteRealmButton;
     Realm realm = null;
 
