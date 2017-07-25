@@ -145,13 +145,6 @@ public class FirstActivity extends AppCompatActivity {
         cancelRealmAsync.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              /*  Intent move = new Intent(FirstActivity.this, SecondActivity.class);
-                startActivity(move);*/
-
-              /*  Log.d(TAG, "status of thread before interrupt: " + t1.getState().toString());
-              t1.interrupt();
-                Log.d(TAG, "status of thread after interrupt: " + t1.getState().toString());
-                */
 
                 Log.d(TAG, "status of thread before cancelling: " + realmAsync.getStatus().toString());
                 realmAsync.cancel(true);
