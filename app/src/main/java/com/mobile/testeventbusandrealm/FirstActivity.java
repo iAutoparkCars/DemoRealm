@@ -30,14 +30,14 @@ public class FirstActivity extends AppCompatActivity {
     Button deleteRealmButton;
     Realm realm = null;
 
-    static Boolean interruptLoop = false;
+    /*isn't used, but what is SUPPOSED to be used with Thread.currentThread().isInterrupted() to return
+    from a method involving Realm                   */
+    static boolean interruptLoop = false;
     final String TAG = getClass().getName();
-
-    //main thread starts a subthread; subthread has is counting in a loop gets broken
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        //the normal
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_activity);
     }
@@ -45,6 +45,7 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     public void onStart()
     {
+        //sets up all the Buttons
         super.onStart();
 
         //setting the Buttons for Realm with AsyncTask
@@ -63,7 +64,6 @@ public class FirstActivity extends AppCompatActivity {
             public void onClick(View view) {
                 realmThread.interrupt();
                 Toast.makeText(FirstActivity.this, "Stopped the for loop", Toast.LENGTH_SHORT);
-
             }
         });
 
@@ -183,7 +183,7 @@ public class FirstActivity extends AppCompatActivity {
                 Log.d(TAG, "Subthread counter: " + i);
                 }
             }
-            catch (Exception e) {Log.e(TAG, "Realm cannot be caught in an exception");}
+            catch (Exception e) {Log.e(TAG, "Realm cannot be caught with an InterruptedException");}
             return null;
         }
 
